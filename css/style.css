@@ -32,8 +32,8 @@ html{
 #switch{
 	position: fixed;
 	bottom: 0;
-	width: 10%;
-	left: 45%;
+	width: 40%;
+	left: 30%;
 	border-top-left-radius: 10px;
 	border-top-right-radius: 10px;
 }

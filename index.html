@@ -23,8 +23,8 @@
 	if(windowX < 612){
 		document.getElementById('right').style.opacity = '0%';
 		document.getElementById('left').style.opacity = '0%';
-		document.getElementsByTagName('img')[0].onclick = '';
-
+		document.getElementsByTagName('img')[0].onclick = function(){switchlang()};
+		document.getElementById('switch').style.display = 'none';
 	}
 
 	function switchlang(){

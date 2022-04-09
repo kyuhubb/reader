@@ -63,9 +63,11 @@
 	function zoom(){
 		if(zoomed == false){
 			document.getElementsByTagName('img')[0].style.height = '200vh';
+			document.getElementById('plaque').style.height = '200vh';
 			zoomed = true;
 		}else{
 			document.getElementsByTagName('img')[0].style.height = '99vh';
+			document.getElementById('plaque').style.height = '99vh';
 			zoomed = false;	
 		}
 	}

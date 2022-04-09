@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>coucou petite perruche</title>
+</head>
+<body>
+	<span onclick="plusdix()" id='num'>1</span>
+	<img onclick='zoom()' src='jp/1.jpg'>
+	<div id='left' onclick='change("-")' class='button'></div>
+	<div id='right' onclick='change("+")' class='button'></div>
+	<div onclick='switchlang()' id='switch' class='button'>switch</div>
+</body>
+<script>
+	var lang = 'jp';
+	var page = 1;
+	var zoomed = false;
+	var total = 166;
+	document.getElementsByTagName('img')[0].style.height = '99vh';
+	var windowX = window.innerWidth;
+	if(windowX < 612){
+		document.getElementById('right').style.opacity = '0%';
+		document.getElementById('left').style.opacity = '0%';
+		document.getElementsByTagName('img')[0].onclick = '';
+
+	}
+
+	function switchlang(){
+		if(lang == 'jp'){
+			lang = 'en';
+		}else{
+			lang = 'jp';
+		}
+			document.getElementsByTagName('img')[0].src = lang+'/'+page+'.jpg';
+	}
+
+	function plusdix(){
+		if(page == 1){
+			page = page+8;
+		}else if(page <= 157){
+			page = page+9;
+		}
+		change('+');
+	}
+
+	function change(symb){
+		if(symb == '+'){
+			if(page < 166){
+				page++;
+			}
+		}else{
+			if(page != 1){
+				page--;
+			}
+		}
+			document.getElementsByTagName('img')[0].src = lang+'/'+page+'.jpg';
+			document.getElementById('num').innerHTML = page;
+	}
+
+	function zoom(){
+		if(zoomed == false){
+			document.getElementsByTagName('img')[0].style.height = '200vh';
+			zoomed = true;
+		}else{
+			document.getElementsByTagName('img')[0].style.height = '99vh';
+			zoomed = false;	
+		}
+	}
+</script>
+</html>

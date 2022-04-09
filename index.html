@@ -8,7 +8,8 @@
 </head>
 <body>
 	<span onclick="plusdix()" id='num'>1</span>
-	<img onclick='zoom()' src='jp/1.jpg'>
+	<div id='plaque' onclick='zoom()'></div>
+	<img src='jp/1.jpg'>
 	<div id='left' onclick='change("-")' class='button'></div>
 	<div id='right' onclick='change("+")' class='button'></div>
 	<div onclick='switchlang()' id='switch' class='button'>switch</div>
@@ -23,7 +24,7 @@
 	if(windowX < 612){
 		document.getElementById('right').style.opacity = '0%';
 		document.getElementById('left').style.opacity = '0%';
-		document.getElementsByTagName('img')[0].onclick = function(){switchlang()};
+		document.getElementById('plaque').onclick = function(){switchlang()};
 		document.getElementById('switch').style.display = 'none';
 	}
 

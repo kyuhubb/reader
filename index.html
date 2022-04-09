@@ -68,5 +68,19 @@
 			zoomed = false;	
 		}
 	}
+
+	document.addEventListener("keydown", (e) => {
+  		if (e.keyCode == '37'){
+  			change('-');
+  		}
+
+  		if (e.keyCode == '39'){
+  			change('+');
+  		}
+
+		if (e.keyCode == '13'){
+  			switchlang();
+  		}  		
+	});
 </script>
 </html>
